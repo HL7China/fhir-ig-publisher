@@ -4842,7 +4842,7 @@ public class Publisher implements IWorkerContext.ILoggingService, IReferenceReso
       log("Checking Output HTML");
       String statusMessage;
       if (mode == IGBuildMode.AUTOBUILD) { 
-        statusMessage = Utilities.escapeXml(sourceIg.present())+", published by "+sourceIg.getPublisher()+". This is not an authorized publication; it is the continuous build for version "+businessVersion+"). This version is based on the current content of <a href=\""+gh()+"\">"+gh()+"</a> and changes regularly. See the <a href=\""+igpkp.getCanonical()+"/history.html\">Directory of published versions</a>"; 
+          statusMessage = "《"+Utilities.escapeXml(sourceIg.present())+"》由"+sourceIg.getPublisher()+"通过FHIR CI工具生成的预览版，正持续构建中，尚未正式发布。当前内部版本号为:"+businessVersion+"。 此版本的内容有待于进一步完善，将会频繁更新。您可以通过 <a href=\""+gh()+"pulls\">提交变更建议</a>来支持本项目。";  
       } else if (mode == IGBuildMode.PUBLICATION) { 
         statusMessage = "Publication Build: This will be filled in by the publication tooling"; 
       } else { 
